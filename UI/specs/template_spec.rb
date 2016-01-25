@@ -10,8 +10,18 @@ describe 'Template' do
 		@template = Template.new(@driver)
 	end
 
+	#create a new template
 	it 'will create' do
 		@login.with('liz@toutapp.com', 'Monkeyw1!')
 		@template.create()
+		expect(@template.is_there?).to eql true
 	end
+
+	#delete the template that was created
+	it 'will delete' do
+		@login.with('liz@toutapp.com', 'Monkeyw1!')
+		@template.delete()
+		expect(@template.is_there?).to eql false
+	end
+
 end

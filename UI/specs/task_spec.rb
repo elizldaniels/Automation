@@ -13,6 +13,7 @@ describe 'Task' do
 	it 'will create' do
 		@login.with('liz@toutapp.com', 'Monkeyw1!')
 		@task.create()
+		expect(@task.was_created?).to eql true
 	end
 	
 end

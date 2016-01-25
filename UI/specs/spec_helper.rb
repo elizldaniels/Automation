@@ -12,8 +12,8 @@ RSpec.configure do |config|
 		end	
 	end
 
-	# config.after(:each) do
-	# 	@driver.quit
-	# end
+	config.after(:each) do
+		@driver.quit
+	end
 
 end

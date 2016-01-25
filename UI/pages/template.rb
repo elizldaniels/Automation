@@ -12,11 +12,18 @@ class Template < BasePage
 	Iframe_Id = {xpath: '/html/body'}
 	Save_Updates = {id: 'update-template'}
 
+	#page objects for deleting
+	Category = {css: '.option-list .category.Auto.CatagoryAuto.Catagory'}
+	New_Template = {css: '.contact .template-name'}
+	Remove_Template = {id: 'remove-template'}
+	Remove_Confirm = {id: 'btnPrimary'}
+
+
 	def initialize(driver)
 		super
-		# visit '/next#email_templates'
 	end
 	
+	#works with campaigns enabled accounts
 	def create()
 		click Template_Btn
 		wait_for(10) {is_displayed? Create_New }
@@ -33,11 +40,26 @@ class Template < BasePage
 		switch_back
 		click Save_Updates
 	end	
+
+	def delete()
+		click Template_Btn
+		click Category
+		wait_for(10) {is_displayed? New_Template}
+		click New_Template
+		wait_for(10) {is_displayed? Remove_Template}
+		click Remove_Template
+		click Remove_Confirm
+		sleep(2)
+	end
+
+	def is_there?
+		is_displayed? New_Template
+	end
+
 end
 
 #TODO
-#find a better way to sleep and wait for the oframe to load
+#find a better way to sleep and wait for the iframe to load and page to load after deleting
 #create share template w/ verivy shared method
-#delete a template
 
 
