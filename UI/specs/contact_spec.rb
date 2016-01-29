@@ -24,10 +24,10 @@ describe 'Contacts' do
 	# it 'will delete contact' do
 	# end
 
-	it 'will create group' do
-		@login.with('liz@toutapp.com', 'Monkeyw1!')
-		@contact.create_group('group1', ' ')
-	end
+	# it 'will create group' do
+	# 	@login.with('liz@toutapp.com', 'Monkeyw1!')
+	# 	@contact.create_group('group1', ' ')
+	# end
 
 	# it 'will delete group' do
 	# end
@@ -38,4 +38,4 @@ end
 
 	#TODO
 	#create a random email/name generator (gem that james and i talked about at home - forgery?)
-	#add assertion for the group that was created
+	#add assertion for the group that was created - need to find a way to verify that specific group

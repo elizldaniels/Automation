@@ -15,7 +15,6 @@ describe 'Login' do
 
   it 'will fail' do
     @login.with('', 'Monkeyw1')
-    #expect(@login.error_message_present?).to eql true
     expect(@login.login_was_success?).to eql false
   end
 

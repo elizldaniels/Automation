@@ -5,8 +5,8 @@ class Email < BasePage
 	Command_Center = {id: 'command-center-grid'}
 	New_Email = {id: 'new-email'}
 	Send_To = {css: '.compose-meta .field>input, .compose-meta .field input.contact-autocomplete'}
-	Email_Template = {xpath: '//*[@id="compose-pane-message"]/div[1]/div[7]/div/div/div/div[2]/div[2]'}
-	Send_Email = {xpath: '//div[@id="compose-send-enabled"]/button'}
+	Email_Template = {css: '.template-select-area > div:nth-child(5)'}
+	Send_Email = {css: '#compose-send-enabled .send-email'}
 	Not_Sent = {id: 'notificationModal'}
 	Sub_Line = {xpath: '//div[@id="cke_1_contents"]/iframe/html/body/div[1]'}
 
@@ -21,7 +21,7 @@ class Email < BasePage
 		type_enter recipient, Send_To
 		wait_for(10) { is_displayed? Send_To }
 		click Email_Template
-		sleep(2)
+		sleep(10)
 		click Send_Email
 	end
 

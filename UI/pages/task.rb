@@ -1,10 +1,7 @@
 require_relative 'base_page'
 #require 'pry'
 
-def wait_and_type_enter text, element
-	wait_for(10) { is_displayed? element }
-	type_enter text, element
-end
+
 
 #non sf intigration
 class Task < BasePage 
@@ -20,6 +17,7 @@ class Task < BasePage
 		super
 	end
 
+#does not work with sales force connection
 	def create()
 		click Create_Task
 		wait_for(10) { is_displayed? Subject }
@@ -43,3 +41,17 @@ end
 #TODO
 #create task from email - will need to wait till this gets fixed on production
 #create task from campaign
+#create a task for tomorrow - does it show with the correct date
+#create a task for yesterday - does it show with the correct date and in the correct area
+#complete a task - does it show in the completed section
+
+#create an old task:
+#today - 2
+
+#create a future task:
+#today + 1
+
+
+
+
+

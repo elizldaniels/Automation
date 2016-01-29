@@ -24,9 +24,18 @@ class BasePage
 		find(locator).send_keys text, :return
 	end
 
+	def wait_and_type_enter(text, element)
+		wait_for(10) { is_displayed? element }
+		type_enter text, element
+	end
 
 	def click(locator)
 		find(locator).click
+	end
+
+	def select(dropdown, option)
+		click dropdown
+		click option
 	end
 
 	def clear(locator)
@@ -36,10 +45,10 @@ class BasePage
 	def wait_for(seconds = 15)
 		Selenium::WebDriver::Wait.new(timeout: seconds).until {yield}
 	end
-	# to use the above: 
-	# def finish_text_present?
-	# 	wait_for(10) { is_displayed? FINISH_TEXT }
-	# end
+
+	def wait_until()
+		Selenium::WebDriver::Wait.new().until {yield}
+	end
 	
 	def is_displayed?(locator)
 		begin
@@ -49,10 +58,16 @@ class BasePage
 		end	
 	end
 
+	# def move_on(locator, action)
+	# 	SkipIt = find(locator)
+	# 	if SkipIt.displayed? = false
+	# 		#move on to the next step in the script
+	# 	else action locator
+	# end
+
 	def type_paragraph(locator, number)
 		par = %w[the quick brown fox jumped over the lazy dog]
 		text = (par.shuffle.join(' ') + ' ') * number
-		#text = par.sort_by { rand } * ' ' * number
 		find(locator).send_keys text
 	end
 
@@ -63,7 +78,7 @@ class BasePage
 	def switch_back()
 		@driver.switch_to.default_content
 	end
-
+					
 
 
 end	

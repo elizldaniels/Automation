@@ -24,4 +24,10 @@ describe 'Template' do
 		expect(@template.is_there?).to eql false
 	end
 
+	# it 'will create and share' do
+	# 	@login.with('liz@toutapp.com', 'Monkeyw1!')
+	# 	@template.share()
+	# 	expect(@template.is_shared?).to eql true
+	# end
+
 end
