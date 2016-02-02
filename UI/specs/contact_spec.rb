@@ -17,6 +17,11 @@ describe 'Contacts' do
 		expect(@contact.was_created?).to eql false
 	end
 
+	it 'will delete contact' do
+		@login.with('liz@toutapp.com', 'Monkeyw1!')
+		@contact.delete('Balinda')
+	end
+
 
 	# it 'will add to group' do
 	# end

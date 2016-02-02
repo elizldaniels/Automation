@@ -58,29 +58,15 @@ class Template < BasePage
 		sleep(2)
 	end
 
-	# def share()
-	# 	click Template_Btn
-	# 	wait_for(10) { is_displayed? New_Template }
-	# 	click Create_New
-	# 	click Select_Template
-	# 	type 'Auto Catagory', Catagory_Field
-	# 	type 'Shared Automation Template', Name_Field
-	# 	click Create_Button
-	# 	wait_for(10) { is_displayed? Subject_Field }
-	# 	type 'This is a shared automated template', Subject_Field
-	# 	sleep(8)
-	# 	switch_frame(0)
-	# 	type_paragraph Iframe_Id, 8
-	# 	switch_back
-	# 	click Save_Updates
-	# 	wait_for(10) { is_displayed? Share_Template }
-	# 	click Share_Template
-	# 	click Save_Shared
-	# 	wait_for(10) { is_displayed? Share_With}
-	# 	select Share_With, Everyone_Group
-	# 	click Save_Shared
-	# 	sleep(2)
-	# end
+	def share()
+		wait_for(10) { is_displayed? Share_Template }
+		click Share_Template
+		click Save_Shared
+		wait_for(10) { is_displayed? Share_With}
+		select Share_With, Everyone_Group
+		click Save_Shared
+		sleep(2)
+	end
 
 
 	def is_there?

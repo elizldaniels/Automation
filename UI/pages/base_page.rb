@@ -78,7 +78,22 @@ class BasePage
 	def switch_back()
 		@driver.switch_to.default_content
 	end
-					
+
+	def check_the_item(locator)
+		click locator			
+	end
+
+	def dropdown_select(locator1, locator2)
+		click locator1
+		click locator2
+	end
+
+	# def repeat(task, times)
+	# 	for i in 0..times
+	# 		if i <
+	# 		task
+	# 	end
+	# end
 
 
 end	

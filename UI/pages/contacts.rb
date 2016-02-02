@@ -17,6 +17,10 @@ class Contacts < BasePage
 	Group_Error_Msg = {css: '.controls .help-inline'}
 	#delete contact page objects
 	Search_Field = {css: '.span6 input'}
+	Check_Box = {css: '.backgrid .select-all-header-cell input'}
+	Dropdown_Btn = {css: '.btn-group button.dropdown-toggle'}
+	Delete_Btn = {css: '.btn-group .delete-people'}
+	Confirm_Btn = {id: 'btnPrimary'}
 
 
 
@@ -33,9 +37,11 @@ class Contacts < BasePage
 	def delete(name)
 		click Relationships_Btn
 		wait_for(10) {is_displayed? New_Contact}
-		type name, Search_Field
-		
-
+		type_enter name, Search_Field
+		sleep(2)
+		check_the_item Check_Box
+		dropdown_select Dropdown_Btn, Delete_Btn
+		click Confirm_Btn		
 	end
 
 	def create_group(name, description)
@@ -55,6 +61,12 @@ class Contacts < BasePage
 		is_displayed? Contact_Error_Msg
 	end
 	#should test to be false 
+
+	# def can_search?
+	# end
+
+	# def was_deleted?
+	# end
 
 end
 
