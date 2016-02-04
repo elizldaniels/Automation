@@ -9,6 +9,7 @@ class Contacts < BasePage
 	Email = {id: 'new_person_email'}
 	Create_Contact_Btn = {id: 'createPersonSubmit'}
 	Contact_Error_Msg = {css: '.modal-body .error'}
+	Close_Btn = {css: '.pull-left button'}
 	#create a group page objects
 	New_Group_Btn = {id: 'add-group'}
 	Group_Name = {css: '.controls input'}
@@ -32,6 +33,8 @@ class Contacts < BasePage
 		type last, Last_Name
 		type email, Email
 		click Create_Contact_Btn
+		sleep(3)
+		click Close_Btn
 	end
 
 	def delete(name)
@@ -65,7 +68,7 @@ class Contacts < BasePage
 	# def can_search?
 	# end
 
-	# def was_deleted?
+	# def contact_was_deleted?
 	# end
 
 end

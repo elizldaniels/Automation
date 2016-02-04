@@ -5,7 +5,7 @@ class Email < BasePage
 	Command_Center = {id: 'command-center-grid'}
 	New_Email = {id: 'new-email'}
 	Send_To = {css: '.compose-meta .field>input, .compose-meta .field input.contact-autocomplete'}
-	Email_Template = {css: '.template-select-area > div:nth-child(5)'}
+	Email_Template = {css: '.template-select-area > div:nth-child(4)'}
 	Send_Email = {css: '#compose-send-enabled .send-email'}
 	Not_Sent = {id: 'notificationModal'}
 	Sub_Line = {xpath: '//div[@id="cke_1_contents"]/iframe/html/body/div[1]'}

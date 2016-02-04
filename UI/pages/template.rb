@@ -19,7 +19,7 @@ class Template < BasePage
 	#objects for shared templates
 	Share_Template = {id: 'share-template'}
 	Share_With = {css: '.select2-container input'}
-	Everyone_Group = {id: 'select2-result-label-4'}
+	Everyone_Group = {id: 'select2-result-label-5'}
 	Save_Shared = {css: '.modal-footer button'}
 	Shared_Tag = {css: '.contact .tag'}
 	Frame_id = {css: '.cke_contents .cke_wysiwyg_frame'}

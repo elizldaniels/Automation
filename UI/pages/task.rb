@@ -27,6 +27,7 @@ class Task < BasePage
 		wait_and_type_enter 'qateam@toutapp.com', Contact_Person
 		type_paragraph Notes, 2
 		click Save_Task
+		sleep(2)
 	end
 
 	def was_created?

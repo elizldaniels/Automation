@@ -58,13 +58,6 @@ class BasePage
 		end	
 	end
 
-	# def move_on(locator, action)
-	# 	SkipIt = find(locator)
-	# 	if SkipIt.displayed? = false
-	# 		#move on to the next step in the script
-	# 	else action locator
-	# end
-
 	def type_paragraph(locator, number)
 		par = %w[the quick brown fox jumped over the lazy dog]
 		text = (par.shuffle.join(' ') + ' ') * number
@@ -88,12 +81,10 @@ class BasePage
 		click locator2
 	end
 
-	# def repeat(task, times)
-	# 	for i in 0..times
-	# 		if i <
-	# 		task
+	# def repeat(x, function1)
+	# 	x.times do 
+	# 		function1			
 	# 	end
 	# end
-
 
 end	
