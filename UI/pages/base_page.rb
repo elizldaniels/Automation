@@ -80,11 +80,4 @@ class BasePage
 		click locator1
 		click locator2
 	end
-
-	# def repeat(x, function1)
-	# 	x.times do 
-	# 		function1			
-	# 	end
-	# end
-
 end	
