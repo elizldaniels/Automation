@@ -28,7 +28,6 @@ describe 'Regressoion' do
 		expect(@contacts.was_created?).to eql false
 		sleep(2)
 		@contacts.delete('Belinda')
-		#@contacts.create_group('Auto-Group', 'Small')
 		sleep(1)
 		@template.create()
 		expect(@template.is_there?).to eql true
