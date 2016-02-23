@@ -12,23 +12,29 @@ describe 'Template' do
 
 	#create a new template
 	it 'will create' do
-		@login.with('liz@toutapp.com', 'Monkeyw1!')
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
 		@template.create()
 		expect(@template.is_there?).to eql true
 	end
 
 	#delete the template that was created
 	it 'will delete' do
-		@login.with('liz@toutapp.com', 'Monkeyw1!')
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
 		@template.delete()
 		expect(@template.is_there?).to eql false
 	end
 
+	#create and share a template
 	it 'will create and share' do
-		@login.with('liz@toutapp.com', 'Monkeyw1!')
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
 		@template.create()
 		@template.share()
 		expect(@template.is_shared?).to eql true
 	end
+
+	# #template attachement
+	# it 'will add an attachement' do
+	# end
+
 
 end

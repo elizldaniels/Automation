@@ -12,7 +12,7 @@ class Template < BasePage
 	Iframe_Id = {xpath: '/html/body'}
 	Save_Updates = {id: 'update-template'}
 	#page objects for deleting
-	Category = {css: '.option-list .category.Auto.CatagoryAuto.Catagory'}
+	Category = {css: '#category-list a.category.Automated.TemplatesAuto.Catagory'}  
 	New_Template = {css: '.contact .template-name'}
 	Remove_Template = {id: 'remove-template'}
 	Remove_Confirm = {id: 'btnPrimary'}
@@ -23,6 +23,8 @@ class Template < BasePage
 	Save_Shared = {css: '.modal-footer button'}
 	Shared_Tag = {css: '.contact .tag'}
 	Frame_id = {css: '.cke_contents .cke_wysiwyg_frame'}
+	#objects to upload a file
+
 
 
 	def initialize(driver)
@@ -81,6 +83,6 @@ end
 
 #TODO
 #find a better way to sleep and wait for the iframe to load and page to load after deleting
-#find specific template created instead of loocing for the css/xpath - so specific templates can be deleted instead of randomly
-#create jsut a share  model, instead of create+ share
+#find specific template created instead of looking for the css/xpath - so specific templates can be deleted instead of randomly
+
 

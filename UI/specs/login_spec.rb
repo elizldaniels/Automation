@@ -9,7 +9,7 @@ describe 'Login' do
   end
 
   it 'will succeeded' do
-    @login.with('liz@toutapp.com', 'Monkeyw1!')
+    @login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
     expect(@login.login_was_success?).to eql true
   end
 

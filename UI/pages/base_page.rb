@@ -1,5 +1,6 @@
 require 'selenium-webdriver'
 require_relative '../config'
+require 'date'
 
 class BasePage
 
@@ -80,4 +81,32 @@ class BasePage
 		click locator1
 		click locator2
 	end
+
+	# def skip_btn(button1)
+	# 	if button1.displayed?
+	# 		click button1
+	# 	end
+	# end
+
+	# date = Date.today
+	# tomorrow = date + 1
+	# yesterday = date + 1
+	# nextMonth = date >> 1
+
+	Today = Time.now
+
+	Today.strftime("%m/%d/%y")
+
+
+
+
+
+
+
+
+
+
+
+
+
 end	

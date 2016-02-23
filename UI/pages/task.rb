@@ -20,7 +20,7 @@ class Task < BasePage
 #does not work with sales force connection
 	def create()
 		click Create_Task
-		wait_for(10) { is_displayed? Subject }
+		wait_for(20) { is_displayed? Subject }
 		click Subject
 		# binding.pry
 		wait_and_type_enter 'Automated Template', Type_Subject
@@ -29,6 +29,15 @@ class Task < BasePage
 		click Save_Task
 		sleep(2)
 	end
+
+	def tomorrow_task()
+		click Create_Task
+		wait_for(20) { is_displayed }
+		
+	end
+
+	# def yesterday_task()
+	# end
 
 	def was_created?
 		is_displayed? New_Task
@@ -45,6 +54,8 @@ end
 #create a task for tomorrow - does it show with the correct date
 #create a task for yesterday - does it show with the correct date and in the correct area
 #complete a task - does it show in the completed section
+
+
 
 #create an old task:
 #today - 2

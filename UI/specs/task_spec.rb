@@ -13,7 +13,7 @@ describe 'Task' do
 	end
 
 	it 'will create' do
-		@login.with('liz@toutapp.com', 'Monkeyw1!')
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
 
 		repeat do
 			@task.create()	

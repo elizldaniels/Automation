@@ -11,7 +11,7 @@ describe 'Email' do
   	end
 
   	it 'will send' do
-  		@login.with('liz@toutapp.com', 'Monkeyw1!')
+  		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
   		@pitches.to('toutqa@gmail.com')
   		expect(@pitches.was_sent?).to eql false
   	end	

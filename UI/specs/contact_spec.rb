@@ -12,19 +12,40 @@ describe 'Contacts' do
 	end
 
 	it 'will create contact' do
-		@login.with('liz@toutapp.com', 'Monkeyw1!')
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
 		@contact.create('Balinda', 'Granger', 'Balinda@sharklasers.com')
 		expect(@contact.was_created?).to eql false
 	end
 
 	it 'will delete contact' do
-		@login.with('liz@toutapp.com', 'Monkeyw1!')
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
 		@contact.delete('Balinda')
 	end
 
+	it 'will add to group' do
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+		@contact.added_to_group()
+		expect(@contact.was_added?).to eql true
 
-	# it 'will add to group' do
-	# end
+	end
+
+	it 'will remove from group' do
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+		@contact.remove_frm_group()
+		expect(@contact.was_added?).to eql false
+	end
+
+	it 'will unsubscribe the contact' do
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+		@contact.unsubscribe()
+		expect(@contact.was_unsubscribed?).to eql true
+	end
+
+	it 'will remove the unsubscribe from the contact' do
+		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+		@contact.remove_unsubscribe()
+		expect(@contact.was_unsubscribed?).to eql false
+	end
 
 	# it 'will delete contact' do
 	# end
@@ -44,3 +65,4 @@ end
 	#TODO
 	#create a random email/name generator (gem that james and i talked about at home - forgery?)
 	#add assertion for the group that was created - need to find a way to verify that specific group
+	#add assertion that will verify if the specific contact was deleted

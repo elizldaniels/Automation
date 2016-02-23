@@ -22,24 +22,38 @@ class Contacts < BasePage
 	Dropdown_Btn = {css: '.btn-group button.dropdown-toggle'}
 	Delete_Btn = {css: '.btn-group .delete-people'}
 	Confirm_Btn = {id: 'btnPrimary'}
+	#adding contact to a group page objects
+	Select_Contact = {css: '#relationship-grid tr td.string-cell'}
+	To_Group = {css: 'button.btn.add-to-group'}
+	Group = {css: 'div.span6.no-wrap-text'}
+	Group_Tag = {css: 'button.btn.btn-mini.btn-inverse'}
+	Remove_Mber = {id: 'manageRemove'}
+	#unsubscribe
+	Single_Box = {css: 'td.select-row-cell input'}
+	Unsubscribe_Btn = {id: 'midbar-inbox-unsubscribe'}
+	Save_Unsubscribe = {css: 'button.btn.btn-primary.save-unsubscribe'}
+	Unsubscribe_Tag = {css: 'span.label.label-warning'}
+	Remove_Unsub_Btn = {css: 'button.remove-unsubscribe.btn.btn-danger'}
 
 
 
 	def create(first, last, email)
 		click Relationships_Btn
-		wait_for(10) {is_displayed? New_Contact}
+		wait_for(20) {is_displayed? New_Contact}
 		click New_Contact
 		type first, First_Name
 		type last, Last_Name
 		type email, Email
 		click Create_Contact_Btn
 		sleep(3)
-		click Close_Btn
+		# if close button is visible 
+		skip_btn Close_Btn
+		#, if not move on
 	end
 
 	def delete(name)
 		click Relationships_Btn
-		wait_for(10) {is_displayed? New_Contact}
+		wait_for(20) {is_displayed? New_Contact}
 		type_enter name, Search_Field
 		sleep(2)
 		check_the_item Check_Box
@@ -49,29 +63,70 @@ class Contacts < BasePage
 
 	def create_group(name, description)
 		click Relationships_Btn
-		wait_for(10) {is_displayed? New_Contact}
+		wait_for(20) {is_displayed? New_Contact}
 		click New_Group_Btn
 		type name, Group_Name
 		type description, Group_Desciption
 		click Create_Group_Btn
 	end
 
-	# def add_to_group()
-	# end
+	def added_to_group()
+		click Relationships_Btn
+		wait_for(20) {is_displayed? Select_Contact}
+		click Select_Contact
+		wait_for(20) {is_displayed? To_Group}
+		click To_Group
+		click Group
+		wait_for(20) {is_displayed? Group_Tag}
+	end
+
+	def remove_frm_group()
+		click Relationships_Btn
+		wait_for(20) {is_displayed? Select_Contact}
+		click Select_Contact
+		wait_for(20) {is_displayed? Group_Tag}
+		click Group_Tag
+		click Remove_Mber
+		sleep(2)
+	end
+
+	def unsubscribe()
+		click Relationships_Btn
+		wait_for(20) {is_displayed? Single_Box}
+		click Single_Box
+		dropdown_select Dropdown_Btn, Unsubscribe_Btn
+		click Save_Unsubscribe
+		sleep(5)
+	end
+
+	def remove_unsubscribe()
+		click Relationships_Btn
+		wait_for(20) {is_displayed? Single_Box}
+		click Single_Box
+		dropdown_select Dropdown_Btn, Unsubscribe_Btn
+		click Remove_Unsub_Btn
+		sleep(5)
+	end
 
 
 	def was_created?
 		is_displayed? Contact_Error_Msg
 	end
-	#should test to be false 
+
+	def was_added?
+		is_displayed? Group_Tag
+	end	
+
+	def was_unsubscribed?
+		click Select_Contact
+		sleep(2)
+		is_displayed? Unsubscribe_Tag
+	end
 
 	# def can_search?
-	# end
-
-	# def contact_was_deleted?
 	# end
 
 end
 
 	#TODO
-	#find a unique verification for a group that is created
+	#find a unique verification for a group that is created, right now you are just confirming there was no errro message (that all fields were filled out)
