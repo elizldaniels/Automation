@@ -12,13 +12,18 @@ describe 'Task' do
 		@task = Task.new(@driver)
 	end
 
-	it 'will create' do
-		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+	# it 'will create' do
+	# 	@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
 
-		repeat do
-			@task.create()	
-		end		
-		#expect(@task.was_created?).to eql true
-	end
+	# 	repeat do
+	# 		@task.create()	
+	# 	end		
+	# 	#expect(@task.was_created?).to eql true
+	# end
+
+	# it 'will create a task for tomorrow' do
+	# 	@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+	# 	@task.for_tomorrow()
+	# end
 	
 end

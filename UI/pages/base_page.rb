@@ -2,6 +2,14 @@ require 'selenium-webdriver'
 require_relative '../config'
 require 'date'
 
+	$date = Date.today
+	$tomorrow = $date + 1
+	$yesterday = $date + 1
+	$nextMonth = $date >> 1
+
+	#tomorrow.strftime("%m/%d/%y")
+
+
 class BasePage
 
 	def initialize(driver)
@@ -82,20 +90,17 @@ class BasePage
 		click locator2
 	end
 
+	# def select_all(locator, aDate)
+	# 	locator.send_keys(aDate)
+	# 	#@driver.action.key_down(:command).click(elem).send_keys('a').key_up(:command).perform
+	# end
+
 	# def skip_btn(button1)
 	# 	if button1.displayed?
 	# 		click button1
 	# 	end
 	# end
 
-	# date = Date.today
-	# tomorrow = date + 1
-	# yesterday = date + 1
-	# nextMonth = date >> 1
-
-	Today = Time.now
-
-	Today.strftime("%m/%d/%y")
 
 
 

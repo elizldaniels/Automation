@@ -12,6 +12,7 @@ class Task < BasePage
 	Notes = {css: '.notes-control-group textarea'}
 	Save_Task = {css: '.modal-footer button'}
 	New_Task = {css: '.middle-section .ellipse-text'}
+	Add_Date = {css: 'input.span2'}
 
 	def initialize(driver)
 		super
@@ -30,11 +31,18 @@ class Task < BasePage
 		sleep(2)
 	end
 
-	def tomorrow_task()
-		click Create_Task
-		wait_for(20) { is_displayed }
-		
-	end
+	# def for_tomorrow()
+	# 	click Create_Task
+	# 	wait_for(20) { is_displayed? Subject}
+	# 	click Subject
+	# 	wait_and_type_enter 'A task for tomorrow', Type_Subject
+	# 	wait_and_type_enter 'qateam@toutapp.com', Contact_Person
+	# 	select_all Add_Date, $tomorrow.strftime('%m/%d/%y')
+	# 	#type $tomorrow.strftime('%m/%d/%y'), Add_Date
+	# 	type_paragraph Notes, 2
+	# 	click Save_Task
+	# 	sleep(2)
+	# end
 
 	# def yesterday_task()
 	# end
