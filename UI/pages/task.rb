@@ -31,21 +31,31 @@ class Task < BasePage
 		sleep(2)
 	end
 
-	# def for_tomorrow()
-	# 	click Create_Task
-	# 	wait_for(20) { is_displayed? Subject}
-	# 	click Subject
-	# 	wait_and_type_enter 'A task for tomorrow', Type_Subject
-	# 	wait_and_type_enter 'qateam@toutapp.com', Contact_Person
-	# 	select_all Add_Date, $tomorrow.strftime('%m/%d/%y')
-	# 	#type $tomorrow.strftime('%m/%d/%y'), Add_Date
-	# 	type_paragraph Notes, 2
-	# 	click Save_Task
-	# 	sleep(2)
-	# end
+	def for_tomorrow()
+		click Create_Task
+		wait_for(20) { is_displayed? Subject}
+		click Subject
+		wait_and_type_enter 'Automated Template', Type_Subject
+		wait_and_type_enter 'qateam@toutapp.com', Contact_Person
+		sleep(3)
+		select_all_type 10, Add_Date, $tomorrow.strftime('%m/%d/%y')
+		type_paragraph Notes, 2
+		click Save_Task
+		sleep(2)
+	end
 
-	# def yesterday_task()
-	# end
+	def for_yesterday()
+		click Create_Task
+		wait_for(20) { is_displayed? Subject}
+		click Subject
+		wait_and_type_enter 'Automated Template', Type_Subject
+		wait_and_type_enter 'qateam@toutapp.com', Contact_Person
+		sleep(3)
+		select_all_type 10, Add_Date, $yesterday.strftime('%m/%d/%y')
+		type_paragraph Notes, 2
+		click Save_Task
+		sleep(2)
+	end
 
 	def was_created?
 		is_displayed? New_Task
@@ -59,17 +69,11 @@ end
 #TODO
 #create task from email - will need to wait till this gets fixed on production
 #create task from campaign
-#create a task for tomorrow - does it show with the correct date
-#create a task for yesterday - does it show with the correct date and in the correct area
 #complete a task - does it show in the completed section
+#create a high priority task -does it have the tag
+#create a low priority task - does it have the tag
 
 
-
-#create an old task:
-#today - 2
-
-#create a future task:
-#today + 1
 
 
 

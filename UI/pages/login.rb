@@ -7,7 +7,7 @@ class Login < BasePage
 	Password_Input = {id: 'user_session_password'}
 	Submit_Button = {id: 'user_session_submit'}
 	Login_Success = {css: '.pane-header h3'}
-	Error_Message= {css: '.narrow .narrow-box .narrow-body form .formError'}
+	Error_Message= {css: '#new_user_session .formError'}
 
 	def initialize(driver)
 		super

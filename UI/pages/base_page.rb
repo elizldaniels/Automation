@@ -4,9 +4,8 @@ require 'date'
 
 	$date = Date.today
 	$tomorrow = $date + 1
-	$yesterday = $date + 1
+	$yesterday = $date - 1
 	$nextMonth = $date >> 1
-
 	#tomorrow.strftime("%m/%d/%y")
 
 
@@ -90,26 +89,17 @@ class BasePage
 		click locator2
 	end
 
-	# def select_all(locator, aDate)
-	# 	locator.send_keys(aDate)
-	# 	#@driver.action.key_down(:command).click(elem).send_keys('a').key_up(:command).perform
-	# end
+	def select_all_type(number, locator, text)
+		number.times {find(locator).send_keys :backspace}
+		find(locator).send_keys text
+	end
+
 
 	# def skip_btn(button1)
 	# 	if button1.displayed?
 	# 		click button1
 	# 	end
 	# end
-
-
-
-
-
-
-
-
-
-
 
 
 
