@@ -47,7 +47,7 @@ class Contacts < BasePage
 		click Create_Contact_Btn
 		sleep(3)
 		# if close button is visible 
-		skip_btn Close_Btn
+		click Close_Btn
 		#, if not move on
 	end
 
@@ -130,3 +130,6 @@ end
 
 	#TODO
 	#find a unique verification for a group that is created, right now you are just confirming there was no errro message (that all fields were filled out)
+	#pagination
+
+
