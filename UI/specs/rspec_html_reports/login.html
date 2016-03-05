@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rspec HTML Reports - Regressoion</title>
+  <title>Rspec HTML Reports - Login</title>
 
   <!-- Bootstrap -->
   <link href="resources/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -266,7 +266,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <p class="text-center" style="font-size:2em;">Regressoion</p>
+      <p class="text-center" style="font-size:2em;">Login</p>
     </div>
   </div>
 
@@ -277,7 +277,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Examples Summary</div>
         <div class="panel-body">
-          <span class="pull-right label label-primary">1 Examples</span>
+          <span class="pull-right label label-primary">2 Examples</span>
 
           <div id="specification_summary">Loading chart...</div>
         </div>
@@ -290,7 +290,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Duration Summary</div>
         <div class="panel-body">
-          <span class="pull-right label label-primary">Finished in 138.88682</span>
+          <span class="pull-right label label-primary">Finished in 11.07442</span>
 
           <div id="duration_summary">Loading chart...</div>
         </div>
@@ -320,14 +320,30 @@
               <td>
                 <div>
                   
-                      Regressoion will run a full suite
+                      Login will succeeded
                   
                 </div>
                 <div>
                   
                 </div>
               </td>
-              <td>69.44341</td>
+              <td>6.56923</td>
+              <td><span class="label label-success">passed</span></td>
+            </tr>
+        
+            <tr>
+              <td>2</td>
+              <td>
+                <div>
+                  
+                      Login will fail
+                  
+                </div>
+                <div>
+                  
+                </div>
+              </td>
+              <td>4.50519</td>
               <td><span class="label label-success">passed</span></td>
             </tr>
         
@@ -342,7 +358,7 @@
 <script type="text/javascript">
     var myChart = new JSChart('specification_summary', 'pie', '');
     myChart.setDataArray([
-        ['Passed', 1],
+        ['Passed', 2],
         ['Failed', 0],
         ['Pending', 0]
     ]);
@@ -356,7 +372,7 @@
     myChart.draw();
 
     var myChart2 = new JSChart('duration_summary', 'line', '');
-    myChart2.setDataArray([[0, 69.44341], [1, 69.44341]]);
+    myChart2.setDataArray([[0, 6.56923], [1, 4.50519]]);
     myChart2.setSize(400, 300);
     myChart2.setLineColor('#0070B8');
     myChart2.setTitle('');
