@@ -13,18 +13,18 @@ describe 'Task' do
 	end
 
 	it 'will create' do
-		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+		@login.with($username, $password)
 		@task.create()
 		expect(@task.was_created?).to eql true
 	end
 
 	it 'will create a task for tomorrow' do
-		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+		@login.with($username, $password)
 		@task.for_tomorrow()
 	end
 
 	it 'will create a task for yesterday' do
-		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+		@login.with($username, $password)
 		@task.for_yesterday()
 	end
 	

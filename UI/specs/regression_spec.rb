@@ -17,7 +17,7 @@ describe 'Regressoion' do
 	end
 
 	it 'will run a full suite' do
-		@login.with('qateam+automation@toutapp.com', 'Monkeyw1!')
+		@login.with($username, $password)
 		@task.create()
 		expect(@task.was_created?).to eql true
 		sleep(1)

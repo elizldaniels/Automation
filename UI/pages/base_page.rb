@@ -2,13 +2,6 @@ require 'selenium-webdriver'
 require_relative '../config'
 require 'date'
 
-	$date = Date.today
-	$tomorrow = $date + 1
-	$yesterday = $date - 1
-	$nextMonth = $date >> 1
-	#tomorrow.strftime("%m/%d/%y")
-
-
 class BasePage
 
 	def initialize(driver)
@@ -37,13 +30,12 @@ class BasePage
 		type_enter text, element
 	end
 
-	def click(locator)
-		find(locator).click
-	end
-
-	def select(dropdown, option)
-		click dropdown
-		click option
+	#to use click add whatever variable locatoryou need when calling the function
+	#you can also call multiple variable locators at one time since this function locator is using '*' or splat/variable arguments.
+	#calling one locator - click button
+	#calling multiple locators at the same time in order - click button1, button2, button3, button4
+	def click(*locators)
+		locators.each {|locator| find(locator).click}
 	end
 
 	def clear(locator)
@@ -76,17 +68,8 @@ class BasePage
 		@driver.switch_to.frame(locator)
 	end
 
-	def switch_back()
+	def switch_back_to_original_frame()
 		@driver.switch_to.default_content
-	end
-
-	def check_the_item(locator)
-		click locator			
-	end
-
-	def dropdown_select(locator1, locator2)
-		click locator1
-		click locator2
 	end
 
 	def select_all_type(number, locator, text)
@@ -100,8 +83,5 @@ class BasePage
 	# 		click button1
 	# 	end
 	# end
-
-
-
 
 end	

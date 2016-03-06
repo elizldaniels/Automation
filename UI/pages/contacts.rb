@@ -56,9 +56,7 @@ class Contacts < BasePage
 		wait_for(20) {is_displayed? New_Contact}
 		type_enter name, Search_Field
 		sleep(2)
-		check_the_item Check_Box
-		dropdown_select Dropdown_Btn, Delete_Btn
-		click Confirm_Btn		
+		click Check_Box, Dropdown_Btn, Delete_Btn, Confirm_Btn	
 	end
 
 	def create_group(name, description)
@@ -75,8 +73,7 @@ class Contacts < BasePage
 		wait_for(20) {is_displayed? Select_Contact}
 		click Select_Contact
 		wait_for(20) {is_displayed? To_Group}
-		click To_Group
-		click Group
+		click To_Group, Group
 		wait_for(20) {is_displayed? Group_Tag}
 	end
 
@@ -85,26 +82,21 @@ class Contacts < BasePage
 		wait_for(20) {is_displayed? Select_Contact}
 		click Select_Contact
 		wait_for(20) {is_displayed? Group_Tag}
-		click Group_Tag
-		click Remove_Mber
+		click Group_Tag, Remove_Mber
 		sleep(2)
 	end
 
 	def unsubscribe()
 		click Relationships_Btn
 		wait_for(20) {is_displayed? Single_Box}
-		click Single_Box
-		dropdown_select Dropdown_Btn, Unsubscribe_Btn
-		click Save_Unsubscribe
+		click Single_Box, Dropdown_Btn, Unsubscribe_Btn, Save_Unsubscribe
 		sleep(5)
 	end
 
 	def remove_unsubscribe()
 		click Relationships_Btn
 		wait_for(20) {is_displayed? Single_Box}
-		click Single_Box
-		dropdown_select Dropdown_Btn, Unsubscribe_Btn
-		click Remove_Unsub_Btn
+		click Single_Box, Dropdown_Btn, Unsubscribe_Btn, Remove_Unsub_Btn
 		sleep(5)
 	end
 
