@@ -78,6 +78,6 @@ end
 
 #TODO
 #find a better way to sleep and wait for the iframe to load and page to load after deleting
-#find specific template created instead of looking for the css/xpath - so specific templates can be deleted instead of randomly
+#find specific template that was created instead of looking for the css/xpath - so specific templates can be deleted instead of randomly
 
 

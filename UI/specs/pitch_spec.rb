@@ -10,7 +10,7 @@ describe 'Email' do
     	@pitches = Email.new(@driver)
   	end
 
-  	it 'will send' do
+  	it 'will send a pitch' do
   		@login.with($username, $password)
   		@pitches.to('toutqa@gmail.com')
   		expect(@pitches.was_sent?).to eql false

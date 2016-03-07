@@ -16,7 +16,7 @@ describe 'Regressoion' do
 		@contacts = Contacts.new(@driver)
 	end
 
-	it 'will run a full suite' do
+	it 'will run a full regression suite' do
 		@login.with($username, $password)
 		@task.create()
 		expect(@task.was_created?).to eql true

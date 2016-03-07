@@ -12,7 +12,7 @@ describe 'Task' do
 		@task = Task.new(@driver)
 	end
 
-	it 'will create' do
+	it 'will create a task for today' do
 		@login.with($username, $password)
 		@task.create()
 		expect(@task.was_created?).to eql true
