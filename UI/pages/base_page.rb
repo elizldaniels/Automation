@@ -55,6 +55,8 @@ class BasePage
 			find(locator).displayed?
 		rescue Selenium::WebDriver::Error::NoSuchElementError
 			false
+			#@driver.save_screenshot 'screenshot.jpg'
+    		@driver.save_screenshot "./#{Time.now.strftime("../../logs/Photos/failshot__%d_%m_%Y__%H_%M_%S")}.jpg"
 		end	
 	end
 
@@ -63,6 +65,7 @@ class BasePage
 		text = (par.shuffle.join(' ') + ' ') * number
 		find(locator).send_keys text
 	end
+	#type_paragraph the_locator, 'whatever amount of text you want'
 
 	def switch_frame(locator)
 		@driver.switch_to.frame(locator)

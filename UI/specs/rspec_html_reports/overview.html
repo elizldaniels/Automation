@@ -283,7 +283,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Duration Summary</div>
         <div class="panel-body">
-          <span class="pull-right label label-primary">Finished in 22.14884</span>
+          <span class="pull-right label label-primary">Finished in 23.14820</span>
 
           <div id="duration_summary">Loading chart...</div>
         </div>
@@ -317,11 +317,11 @@
               <td>
                 <a href="login.html">Login</a>
               </td>
-              <td>11.07442</td>
+              <td>11.57410</td>
               <td class="warning"><span>0</span></td>
-              <td class="danger"><span>0</span></td>
-              <td class="success"><span>2</span></td>
-              <td><span class="label label-success">passed</span></td>
+              <td class="danger"><span>1</span></td>
+              <td class="success"><span>1</span></td>
+              <td><span class="label label-danger">failed</span></td>
             </tr>
         
         
@@ -336,8 +336,8 @@
 <script type="text/javascript">
     var myChart = new JSChart('specification_summary', 'pie', '');
     myChart.setDataArray([
-        ['Passed', 2],
-        ['Failed', 0],
+        ['Passed', 1],
+        ['Failed', 1],
         ['Pending', 0]
     ]);
     myChart.colorize(['#8DC63F', '#ED1C24', '#F7941D']);
@@ -350,7 +350,7 @@
     myChart.draw();
 
     var myChart2 = new JSChart('duration_summary', 'line', '');
-    myChart2.setDataArray([[0, 11.07442], [1, 11.07442]]);
+    myChart2.setDataArray([[0, 11.5741], [1, 11.5741]]);
     myChart2.setSize(400, 300);
     myChart2.setLineColor('#0070B8');
     myChart2.setTitle('');

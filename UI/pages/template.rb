@@ -1,7 +1,7 @@
 require_relative 'base_page'
 
 class Template < BasePage 
-
+	#objects for creating a template
 	Template_Btn = {css: '#email-templates-tab > a'}
 	Create_New = {id: 'new-template'}
 	Select_Template = {css: 'body > div.content-select.content-select-modal.modal.in > div.modal-body.text-center.cadence-new-modal-body > div.content-option.template-option'}

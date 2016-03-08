@@ -281,7 +281,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Duration Summary</div>
         <div class="panel-body">
-          <span class="pull-right label label-primary">Finished in 13.15790</span>
+          <span class="pull-right label label-primary">Finished in 15.83109</span>
 
           <div id="duration_summary">Loading chart...</div>
         </div>
@@ -315,11 +315,11 @@
                 </div>
                   
               </td>
-              <td>7.52442</td>
+              <td>9.96554</td>
             </tr>
         
             <tr>
-              <td><span class="label label-success">passed</span></td>
+              <td><span class="label label-danger">failed</span></td>
               <td>
                 <div>
                   
@@ -327,8 +327,46 @@
                   
                 </div>
                   
+                      <div hidden class="panel panel-danger test-error">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">RSpec::Expectations::ExpectationNotMetError</h3>
+                        </div>
+                        <div class="panel-body">
+                          <pre class="highlight"><code>
+<span class="ss">expected: </span><span class="kp">true</span>
+     <span class="ss">got: </span><span class="c1">#&lt;File:./../../logs/Photos/failshot__07_03_2016__15_57_15.jpg (closed)&gt;</span>
+
+<span class="p">(</span><span class="n">compared</span> <span class="n">using</span> <span class="nb">eql?</span><span class="p">)</span>
+
+<span class="no">Diff</span><span class="p">:</span>
+<span class="err">@@</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="err">@@</span>
+<span class="o">-</span><span class="kp">true</span>
+<span class="o">+</span><span class="s2">"#&lt;File:./../../logs/Photos/failshot__07_03_2016__15_57_15.jpg (closed)&gt;"</span>
+</code></pre>
+
+                          <h5>/Users/elizabethdaniels/Documents/Automation/UI/specs/login_spec.rb:18:in `block (2 levels) in <top (required)>'</h5>
+                          <div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">17
+18
+19
+20
+21
+22</pre></td><td class="code"><pre>    <span class="vi">@login</span><span class="p">.</span><span class="nf">with</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="vg">$password</span><span class="p">)</span>
+<span class="o">---&gt;</span>    <span class="n">expect</span><span class="p">(</span><span class="vi">@login</span><span class="p">.</span><span class="nf">login_was_success?</span><span class="p">).</span><span class="nf">to</span> <span class="n">eql</span> <span class="kp">true</span>
+  <span class="k">end</span>
+
+  <span class="c1">#before all, after all</span>
+
+</pre></td></tr></tbody></table>
+</div>
+
+                        </div>
+                      </div>
+                      <div hidden class="panel panel-default test-error">
+                        <img src="login_spec.rb-16.png">
+                      <div>
+                  
               </td>
-              <td>5.63348</td>
+              <td>5.86555</td>
             </tr>
         
         </tbody>
@@ -342,8 +380,8 @@
 <script type="text/javascript">
     var myChart = new JSChart('specification_summary', 'pie', '');
     myChart.setDataArray([
-        ['Passed', 2],
-        ['Failed', 0],
+        ['Passed', 1],
+        ['Failed', 1],
         ['Pending', 0]
     ]);
     myChart.colorize(['#8DC63F', '#ED1C24', '#F7941D']);
@@ -356,7 +394,7 @@
     myChart.draw();
 
     var myChart2 = new JSChart('duration_summary', 'line', '');
-    myChart2.setDataArray([[0, 7.52442], [1, 5.63348]]);
+    myChart2.setDataArray([[0, 9.96554], [1, 5.86555]]);
     myChart2.setSize(400, 300);
     myChart2.setLineColor('#0070B8');
     myChart2.setTitle('');

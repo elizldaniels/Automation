@@ -15,7 +15,7 @@ describe 'Login' do
 
   it 'will fail in login' do
     @login.with('', $password)
-    expect(@login.login_was_success?).to eql false
+    expect(@login.login_was_success?).to eql true
   end
 
   #before all, after all

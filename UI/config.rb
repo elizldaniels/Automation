@@ -21,4 +21,6 @@ $yesterday = $date - 1
 $nextMonth = $date >> 1
 #tomorrow.strftime("%m/%d/%y")
 
+#rspec -f RspecHtmlFormatter login_spec.rb
+
 

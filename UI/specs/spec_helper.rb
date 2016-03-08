@@ -12,8 +12,12 @@ RSpec.configure do |config|
 		end	
 	end
 
-	# config.after(:each) do
-	# 	@driver.quit
-	# end
+	config.after(:each) do
+	 	# @driver.quit
+	  #   if example.exception
+   #      	# Save screenshot to 'path/to/foo.png'
+   #      	example.metadata[:screenshot] = './#{Time.now.strftime("../../logs/Photos/failshot__%d_%m_%Y__%H_%M_%S")}.jpg'
+   #  	end
+	end
 
 end
