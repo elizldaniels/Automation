@@ -12,12 +12,15 @@ RSpec.configure do |config|
 		end	
 	end
 
-	config.after(:each) do
+	config.after(:each) do |example|
 	 	# @driver.quit
-	  #   if example.exception
-   #      	# Save screenshot to 'path/to/foo.png'
-   #      	example.metadata[:screenshot] = './#{Time.now.strftime("../../logs/Photos/failshot__%d_%m_%Y__%H_%M_%S")}.jpg'
-   #  	end
+	     if example.exception
+	     	relative_screenshot_path = "../../../logs/Photos/#{example.description.gsub(' ', '_') + Time.now.strftime("__%d_%m_%Y__%H_%M_%S")}.jpg"
+	     	# Path to screenshot is relative to this file and expanded
+	     	absolute_screenshot_path = File.expand_path(relative_screenshot_path, __FILE__)
+    		@driver.save_screenshot absolute_screenshot_path
+         	example.metadata[:screenshot] = absolute_screenshot_path
+     	end
 	end
 
 end

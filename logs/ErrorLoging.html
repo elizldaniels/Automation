@@ -281,7 +281,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Duration Summary</div>
         <div class="panel-body">
-          <span class="pull-right label label-primary">Finished in 15.83109</span>
+          <span class="pull-right label label-primary">Finished in 12.59215</span>
 
           <div id="duration_summary">Loading chart...</div>
         </div>
@@ -310,12 +310,12 @@
               <td>
                 <div>
                   
-                      Login will succeeded in login
+                      Login will succeeded
                   
                 </div>
                   
               </td>
-              <td>9.96554</td>
+              <td>7.48885</td>
             </tr>
         
             <tr>
@@ -323,7 +323,7 @@
               <td>
                 <div>
                   
-                      Login will fail in login
+                      Login will fail
                   
                 </div>
                   
@@ -334,14 +334,9 @@
                         <div class="panel-body">
                           <pre class="highlight"><code>
 <span class="ss">expected: </span><span class="kp">true</span>
-     <span class="ss">got: </span><span class="c1">#&lt;File:./../../logs/Photos/failshot__07_03_2016__15_57_15.jpg (closed)&gt;</span>
+     <span class="ss">got: </span><span class="kp">false</span>
 
 <span class="p">(</span><span class="n">compared</span> <span class="n">using</span> <span class="nb">eql?</span><span class="p">)</span>
-
-<span class="no">Diff</span><span class="p">:</span>
-<span class="err">@@</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="err">@@</span>
-<span class="o">-</span><span class="kp">true</span>
-<span class="o">+</span><span class="s2">"#&lt;File:./../../logs/Photos/failshot__07_03_2016__15_57_15.jpg (closed)&gt;"</span>
 </code></pre>
 
                           <h5>/Users/elizabethdaniels/Documents/Automation/UI/specs/login_spec.rb:18:in `block (2 levels) in <top (required)>'</h5>
@@ -354,7 +349,7 @@
 <span class="o">---&gt;</span>    <span class="n">expect</span><span class="p">(</span><span class="vi">@login</span><span class="p">.</span><span class="nf">login_was_success?</span><span class="p">).</span><span class="nf">to</span> <span class="n">eql</span> <span class="kp">true</span>
   <span class="k">end</span>
 
-  <span class="c1">#before all, after all</span>
+ 
 
 </pre></td></tr></tbody></table>
 </div>
@@ -362,11 +357,11 @@
                         </div>
                       </div>
                       <div hidden class="panel panel-default test-error">
-                        <img src="login_spec.rb-16.png">
+                        <img src="/Users/elizabethdaniels/Documents/Automation/logs/Photos/will_fail__08_03_2016__15_55_40.jpg">
                       <div>
                   
               </td>
-              <td>5.86555</td>
+              <td>5.10330</td>
             </tr>
         
         </tbody>
@@ -394,7 +389,7 @@
     myChart.draw();
 
     var myChart2 = new JSChart('duration_summary', 'line', '');
-    myChart2.setDataArray([[0, 9.96554], [1, 5.86555]]);
+    myChart2.setDataArray([[0, 7.48885], [1, 5.1033]]);
     myChart2.setSize(400, 300);
     myChart2.setLineColor('#0070B8');
     myChart2.setTitle('');

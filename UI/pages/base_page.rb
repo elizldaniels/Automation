@@ -56,7 +56,7 @@ class BasePage
 		rescue Selenium::WebDriver::Error::NoSuchElementError
 			false
 			#@driver.save_screenshot 'screenshot.jpg'
-    		@driver.save_screenshot "./#{Time.now.strftime("../../logs/Photos/failshot__%d_%m_%Y__%H_%M_%S")}.jpg"
+    		#@driver.save_screenshot "./#{Time.now.strftime("../../logs/Photos/failshot__%d_%m_%Y__%H_%M_%S")}.jpg"
 		end	
 	end
 
