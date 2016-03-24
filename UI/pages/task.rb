@@ -38,7 +38,8 @@ class Task < BasePage
 		wait_and_type_enter 'Automated Template', Type_Subject
 		wait_and_type_enter 'qateam@toutapp.com', Contact_Person
 		sleep(3)
-		select_all_type 10, Add_Date, $tomorrow.strftime('%m/%d/%y')
+		select_all_type 10, Add_Date
+		type $tomorrow.strftime('%m/%d/%y'), Add_Date
 		type_paragraph Notes, 2
 		click Save_Task
 		sleep(2)
@@ -51,7 +52,8 @@ class Task < BasePage
 		wait_and_type_enter 'Automated Template', Type_Subject
 		wait_and_type_enter 'qateam@toutapp.com', Contact_Person
 		sleep(3)
-		select_all_type 10, Add_Date, $yesterday.strftime('%m/%d/%y')
+		select_all_type 10, Add_Date
+		type $yesterday.strftime('%m/%d/%y'), Add_Date
 		type_paragraph Notes, 2
 		click Save_Task
 		sleep(2)

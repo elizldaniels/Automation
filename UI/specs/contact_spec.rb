@@ -7,47 +7,39 @@ require_relative 'spec_helper'
 describe 'Contacts' do
 
 	before(:each) do
-		@login = Login.new(@driver)
 		@contact = Contacts.new(@driver)
 	end
 
 	it 'will create a contact' do
-		@login.with($username, $password)
 		@contact.create('Balinda', 'Granger', 'Balinda@sharklasers.com')
 		expect(@contact.was_created?).to eql false
 	end
 
 	it 'will delete a contact' do
-		@login.with($username, $password)
 		@contact.delete('Balinda')
 	end
 
 	it 'will add a contact to group' do
-		@login.with($username, $password)
 		@contact.added_to_group()
 		expect(@contact.was_added?).to eql true
 	end
 
 	it 'will remove a contact from group' do
-		@login.with($username, $password)
 		@contact.remove_frm_group()
 		expect(@contact.was_added?).to eql false
 	end
 
 	it 'will regular unsubscribe the contact' do
-		@login.with($username, $password)
 		@contact.unsubscribe()
 		expect(@contact.was_unsubscribed?).to eql true
 	end
 
 	it 'will remove the unsubscribe from the contact' do
-		@login.with($username, $password)
 		@contact.remove_unsubscribe()
 		expect(@contact.was_unsubscribed?).to eql false
 	end
 
 	# it 'will create group' do
-	# 	@login.with('liz@toutapp.com', 'Monkeyw1!')
 	# 	@contact.create_group('group1', ' ')
 	# end
 

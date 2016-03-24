@@ -100,6 +100,14 @@ class Contacts < BasePage
 		sleep(5)
 	end
 
+	def paginate()
+	 	click Relationships_Btn
+	# 	on the everyone tab, confirm how many pages of contacts there are
+	# 	click to the next page, confirm that the number changes and the contacts show up
+	# 	click to the next page confirm that the number changes and the contacts show up
+	# 	click back and make sure the page number changes and the contacts show up
+	end
+
 
 	def was_created?
 		is_displayed? Contact_Error_Msg

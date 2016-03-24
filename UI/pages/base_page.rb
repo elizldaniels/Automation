@@ -1,12 +1,12 @@
 require 'selenium-webdriver'
 require_relative '../config'
-require 'date'
 
 class BasePage
 
 	def initialize(driver)
 		@driver = driver
-		@driver.manage.window.resize_to(1550, 900)
+		@driver.manage.window.resize_to(1230, 900)
+		#1550, 900
 	end
 	
 	def visit(url_path)
@@ -55,7 +55,21 @@ class BasePage
 			find(locator).displayed?
 		rescue Selenium::WebDriver::Error::NoSuchElementError
 			false
+			#@driver.save_screenshot 'screenshot.jpg'
+    		#@driver.save_screenshot "./#{Time.now.strftime("../../logs/Photos/failshot__%d_%m_%Y__%H_%M_%S")}.jpg"
 		end	
+	end
+
+	def text_displayed?(locator, word)
+		find(locator).text.include?(word)
+	end
+
+	def on_page?(words)
+		@driver.page_source.include?(words)
+	end
+
+	def page_source()
+  		@driver.getPageSource
 	end
 
 	def type_paragraph(locator, number)
@@ -63,6 +77,7 @@ class BasePage
 		text = (par.shuffle.join(' ') + ' ') * number
 		find(locator).send_keys text
 	end
+	#type_paragraph the_locator, 'whatever amount of text you want'
 
 	def switch_frame(locator)
 		@driver.switch_to.frame(locator)
@@ -72,10 +87,16 @@ class BasePage
 		@driver.switch_to.default_content
 	end
 
-	def select_all_type(number, locator, text)
+	def select_all_type(number, locator)
 		number.times {find(locator).send_keys :backspace}
-		find(locator).send_keys text
+		#find(locator).send_keys text
 	end
+
+	# def dropdown_select(locator, *option)
+	# 	dropdown = find(locator)
+	# 	select_list = Selenium::WebDriver::Support::Select.new(dropdown)
+	# 	select_list.select_by(text: option)
+	# end
 
 
 	# def skip_btn(button1)

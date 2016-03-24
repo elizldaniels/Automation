@@ -19,6 +19,11 @@ $date = Date.today
 $tomorrow = $date + 1
 $yesterday = $date - 1
 $nextMonth = $date >> 1
-#tomorrow.strftime("%m/%d/%y")
+
+
+
+
+#rspec -f RspecHtmlFormatter login_spec.rb
+#rspec -f RspecYahFormatter --out ../../logs/ErrorLoging.html login_spec.rb 
 
 

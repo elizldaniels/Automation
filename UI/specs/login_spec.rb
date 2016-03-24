@@ -8,16 +8,16 @@ describe 'Login' do
     @login = Login.new(@driver)
   end
 
-  it 'will succeeded in login' do
+  it 'will succeeded' do 
     @login.with($username, $password)
     expect(@login.login_was_success?).to eql true
   end
 
-  it 'will fail in login' do
+  it 'will fail' do 
     @login.with('', $password)
-    expect(@login.login_was_success?).to eql false
+    expect(@login.login_was_success?).to eql true
   end
 
-  #before all, after all
+ 
 
 end
